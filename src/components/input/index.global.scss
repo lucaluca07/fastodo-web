@@ -1,0 +1,22 @@
+@import '~quill/dist/quill.snow.css';
+@import '../../styles/color.scss';
+
+.input {
+  height: 34px;
+  line-height: 34px;
+  background: transparent;
+  padding: 0 8px;
+  border: none;
+  .ql-container.ql-snow {
+    border: none;
+  }
+  .ql-editor {
+    padding: 0;
+    line-height: inherit;
+  }
+
+  .ql-editor.ql-blank::before {
+    left: 0;
+    font-style: normal;
+  }
+}

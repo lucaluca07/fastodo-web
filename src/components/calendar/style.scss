@@ -1,0 +1,182 @@
+@import '../../styles/color.scss';
+
+.calendar {
+  font-size: 14px;
+
+  &-header {
+    padding: 11px 16px;
+    &-left {
+      font-weight: bold;
+      font-size: 18px;
+    }
+    &-right {
+      .calendar-today {
+        margin: 0 8px;
+        padding: 4px;
+        border-radius: 2px;
+        cursor: pointer;
+        &:hover {
+          background: #fafafa;
+        }
+      }
+      .iconfont {
+        font-size: 14px;
+        padding: 4px;
+        cursor: pointer;
+        &:hover {
+          background: #fafafa;
+        }
+      }
+    }
+  }
+  &-main {
+    flex: 1;
+    padding: 8px 12px;
+    table {
+      width: 100%;
+      max-width: 100%;
+      height: 256px;
+      background-color: transparent;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+    .calendar-column-header {
+      padding-right: 12px;
+      padding-bottom: 5px;
+      text-align: right;
+      &-inner {
+        font-weight: 400;
+        display: block;
+      }
+    }
+  }
+  &-date {
+    height: 116px;
+    margin: 0 4px;
+    padding: 4px 8px;
+    color: rgba(0, 0, 0, 0.65);
+    text-align: left;
+    border-top: 2px solid #e8e8e8;
+    transition: background 0.3s;
+    cursor: pointer;
+    &:hover {
+      .iconfont {
+        visibility: visible;
+      }
+    }
+  }
+  &-value {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .iconfont {
+      visibility: hidden;
+    }
+  }
+  &-content {
+    margin-top: 8px;
+    height: 88px;
+    overflow-y: auto;
+  }
+  .prev-month &-value,
+  .next-month &-value {
+    color: rgba(0, 0, 0, 0.25);
+  }
+}
+
+.calendar-dark {
+  color: $white;
+  .calendar-header {
+    .calendar-header-left {
+      color: $highlight-color;
+    }
+    .calendar-header-right {
+      color: $dark-text-color-secondary;
+    }
+    .calendar-today:hover,
+    .iconfont:hover {
+      color: $white;
+      background: none;
+    }
+  }
+  .calendar-date {
+    height: 116px;
+    margin: 0 4px;
+    padding: 4px 8px;
+    color: $dark-text-color-primary;
+    text-align: left;
+    border-top: 2px solid #e8e8e8;
+    transition: background 0.3s;
+    cursor: pointer;
+    &:hover {
+      .iconfont {
+        visibility: visible;
+      }
+    }
+  }
+  .before-day .calendar-value,
+  .prev-month .calendar-value,
+  .next-month .calendar-value {
+    color: $dark-text-color-secondary;
+  }
+}
+
+.calendar-card {
+  .calendar-header {
+    padding-bottom: 0;
+    &-right {
+      color: $text-color-secondary;
+      font-weight: bold;
+      .calendar-today {
+        margin: 0;
+      }
+    }
+  }
+  table {
+    height: 175px;
+    .calendar-column-header {
+      font-size: 12px;
+      text-align: center;
+      padding: 0;
+      height: 25px;
+      line-height: 25px;
+    }
+  }
+  .calendar-date {
+    font-weight: bold;
+    height: 25px;
+    border-top: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+  .calendar-content {
+    display: none;
+  }
+
+  .calendar-value {
+    height: 25px;
+    line-height: 25px;
+    width: 100%;
+    justify-content: center;
+    border-radius: 2px;
+    .iconfont {
+      display: none;
+    }
+    &:hover {
+      background: $hover-color;
+    }
+  }
+  .today {
+    .calendar-value {
+      color: $primary-color;
+    }
+  }
+  .selected {
+    .calendar-value {
+      background-color: $selected-bg-color;
+    }
+  }
+}

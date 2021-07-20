@@ -1,0 +1,16 @@
+.common-add-task {
+  height: 36px;
+  width: 36px;
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  color: #fff;
+  box-shadow: 2px 0 8px 0 rgba(29, 35, 41, 0.05);
+  &:active {
+    transform: scale(0.9);
+    opacity: 0.9;
+  }
+  .iconfont {
+    font-size: 20px;
+  }
+}
